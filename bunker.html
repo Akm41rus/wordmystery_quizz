@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бункер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1f2937; /* Темно-серый фон */
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="max-w-screen-xl mx-auto px-10 md:px-3 py-4 min-h-screen flex flex-col items-center">
+        <div class="flex justify-center mt-4">
+            <div class="relative inline-block">
+                <button id="catalogButton" class="bg-white text-black text-2xl font-bold py-2 px-4 rounded hover:bg-gray-200 shadow-lg">Каталог</button>
+                <div id="dropdownMenu" class="absolute hidden bg-white shadow-lg rounded mt-2 min-w-[160px] flex flex-col justify-center">
+                    <a href="main.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">На главную</a>
+                    <a href="qwests.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Квесты</a>
+                    <a href="qizz.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Квизы</a>
+                    <a href="maphia.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Мафия</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 flex flex-col justify-center text-center">
+            <img class="mt-8 rounded-lg mx-auto shadow-lg" src="images/bunker.jpeg" width="350">
+            <h1 class="mt-8 text-xl font-bold">Подземелье Слизерин</h1>
+            <p class="mt-4 font-bold">Мы даём возможность сыграть в бункер в стиле вселенной Гарри Поттера: В мире магии наступил апокалипсис, в котором сможет выжить не просто сильнейший, а самый сообразительный. Единственное место, где можно укрыться -это подземелье факультета Слизерин, но мест хватит не всем, вы должны доказать, что именно вы сможете помочь, чтобы решить проблему конца света и выжить другим. Участники получать тематические карты, например, будут карты со статусом крови, предметы будут магические (элискиры, амулеты, меч Гриффиндора и т.д)</p>
+            <a href="buy.html">
+                <button class="text-black text-2xl font-bold py-4 px-6 mt-8 mb-4 rounded bg-emerald-300 shadow-lg">Забронировать</button>
+            </a>
+        </div>
+        <script>
+            document.getElementById('catalogButton').addEventListener('click', function() {
+                document.getElementById('dropdownMenu').classList.toggle('hidden');
+            });
+        </script>
+    </div>
+</body>
+</html>

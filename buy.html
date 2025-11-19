@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Динамический фон с mesh-градиентом */
+    body::before {
+      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(63, 189, 215, 0.1) 0%, transparent 75%),
+        radial-gradient(circle at 80% 80%, rgba(126, 22, 222, 0.1) 0%, transparent 75%),
+        radial-gradient(circle at 50% 30%, rgba(0, 255, 127, 0.05) 0%, transparent 50%);
+      animation: meshAnimation 10s ease-in-out infinite; z-index: -2;
+    }
+
+    /* Анимированная сетка */
+    body::after {
+      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-image:
+        linear-gradient(rgba(135, 135, 135, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px; animation: gridMove 30s linear infinite; z-index: -1;
+    }
+
+    @keyframes meshAnimation {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); filter: hue-rotate(0deg); }
+      33% { transform: translate(-20px, -20px) rotate(1deg); filter: hue-rotate(100deg); }
+      66% { transform: translate(20px, -10px) rotate(-1deg); filter: hue-rotate(200deg); }
+    }
+    @keyframes gridMove { 0% { transform: translate(0, 0); } 100% { transform: translate(50px, 50px); } }
+
+    /* Плавающие частицы */
+    .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+    .particle {
+      position: absolute; width: 2px; height: 2px; background: var(--accent);
+      border-radius: 50%; opacity: 0; animation: float 15s infinite;
+    }
+    @keyframes float {
+      0% { opacity: 0; transform: translateY(100vh) scale(0); }
+      10% { opacity: 0.4; } 90% { opacity: 0.4; }
+      100% { opacity: 0; transform: translateY(-100vh) scale(1.5); }
+    }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-10 md:px-3 py-4 min-h-screen flex flex-col items-center">
+        <div class="flex justify-center mt-4">
+            <div class="relative inline-block">
+                <button id="catalogButton" class="bg-black text-white text-2xl font-bold py-2 px-4 rounded hover:bg-gray-800 shadow-lg">Каталог</button>
+                <div id="dropdownMenu" class="absolute hidden bg-white shadow-lg rounded mt-2 min-w-[160px] flex flex-col justify-center">
+                    <a href="main.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">На главную</a>
+                    <a href="qwests.html" class="block px-4 py-2 hover:bg-gray-200 text-xl">Квесты</a>
+                    <a href="qizz.html" class="block px-4 py-2 hover:bg-gray-200 text-xl">Квизы</a>
+                    <a href="maphia.html" class="block px-4 py-2 hover:bg-gray-200 text-xl">Мафия</a>
+                    <a href="bunker.html" class="block px-4 py-2 hover:bg-gray-200 text-xl">Бункер</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 flex flex-col justify-center text-center">
+            <h1 class="mt-8 text-3xl font-bold">Спасибо, что выбрали нас!</h1>
+            <p class="mt-16 font-bold">🗝Пожалуйста обратитесь в техническую поддержку для дальнейшего бронирования✨ </p>
+            <p class="mt-4 font-bold">+7 980 374-78-60 или +7 914 787-65-17</p>
+        </div>
+        <script>
+            document.getElementById('catalogButton').addEventListener('click', function() {
+                document.getElementById('dropdownMenu').classList.toggle('hidden');
+            });
+        </script>
+    </div>
+</body>
+</html>

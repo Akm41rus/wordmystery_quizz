@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квесты</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1f2937; /* Темно-серый фон */
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="max-w-screen-xl mx-auto px-10 md:px-3 py-4 min-h-screen flex flex-col items-center">
+        <div class="flex justify-center mt-4">
+            <div class="relative inline-block">
+                <button id="catalogButton" class="bg-white text-black text-2xl font-bold py-2 px-4 rounded hover:bg-gray-200 shadow-lg">Каталог</button>
+                <div id="dropdownMenu" class="absolute hidden bg-white shadow-lg rounded mt-2 min-w-[160px] flex flex-col justify-center">
+                    <a href="main.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">На главную</a>
+                    <a href="qizz.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Квизы</a>
+                    <a href="maphia.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Мафия</a>
+                    <a href="bunker.html" class="block px-4 py-2 hover:bg-gray-200 text-xl text-black">Бункер</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 flex flex-col justify-center text-center">
+            <img class="mt-8 rounded-lg mx-auto shadow-lg" src="images/oldcastle.jpeg" width="350">
+            <h1 class="mt-8 text-xl font-bold">Испытания старых портретов</h1>
+            <p class="mt-8 font-bold">Письмо из Хогвартса пришло слишком поздно, совы попали в ловушку — вас ждёт ночь испытаний, чтобы спасти школу от тёмной магии ✉️🪄.</p>
+            <p class="mt-4 font-bold">Вы — ученики, оказавшиеся в пустующих коридорах школы волшебства. Нечистая сила пробудилась, и чтобы защитить школу, нужно найти и обезвредить несколько магических артефактов, разгадать тайны старых портретов и восстановить печать, пока часы бьют полночь ⏳🕯.</p>
+            <a href="buy.html">
+                <button class="text-black text-2xl font-bold py-4 px-6 mt-8 mb-4 rounded bg-emerald-300 shadow-lg">Забронировать</button>
+            </a>
+        </div>
+        <script>
+            document.getElementById('catalogButton').addEventListener('click', function() {
+                document.getElementById('dropdownMenu').classList.toggle('hidden');
+            });
+        </script>
+    </div>
+</body>
+</html>
